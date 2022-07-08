@@ -12,3 +12,5 @@ const exercise1 = () => {
 
     console.log(`Name: ${employee1.name} - Code: ${employee1.code}.`);
 };
+
+exercise1();
