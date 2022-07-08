@@ -52,5 +52,41 @@ const exercise2 = () => {
     console.log(people3);
 };
 
+const exercise3 = () => {
+    let botaoAtualizar = document.getElementById(
+        "atualizar-saldo"
+    ) as HTMLButtonElement;
+    let botaoLimpar = document.getElementById(
+        "limpar-saldo"
+    ) as HTMLButtonElement;
+    let soma = document.getElementById("soma") as HTMLInputElement;
+    let campoSaldo = document.getElementById("campo-saldo") as HTMLSpanElement;
+
+    campoSaldo.innerHTML = "0";
+
+    function somarAoSaldo(pegaSoma: number): void {
+        let resultado: number = Number(campoSaldo.innerHTML) + pegaSoma;
+        campoSaldo.innerHTML = resultado.toString();
+        limpaSoma();
+    }
+
+    function limpaSoma(): void {
+        soma.value = "";
+    }
+
+    function limparSaldo(): void {
+        campoSaldo.innerHTML = "";
+    }
+
+    botaoAtualizar.addEventListener("click", function () {
+        somarAoSaldo(Number(soma.value));
+    });
+
+    botaoLimpar.addEventListener("click", function () {
+        limparSaldo();
+    });
+};
+
 exercise1();
 exercise2();
+exercise3();

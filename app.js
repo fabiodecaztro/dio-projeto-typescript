@@ -36,5 +36,30 @@ const exercise2 = () => {
     };
     console.log(people3);
 };
+const exercise3 = () => {
+    let botaoAtualizar = document.getElementById("atualizar-saldo");
+    let botaoLimpar = document.getElementById("limpar-saldo");
+    let soma = document.getElementById("soma");
+    let campoSaldo = document.getElementById("campo-saldo");
+    campoSaldo.innerHTML = "0";
+    function somarAoSaldo(pegaSoma) {
+        let resultado = Number(campoSaldo.innerHTML) + pegaSoma;
+        campoSaldo.innerHTML = resultado.toString();
+        limpaSoma();
+    }
+    function limpaSoma() {
+        soma.value = "";
+    }
+    function limparSaldo() {
+        campoSaldo.innerHTML = "";
+    }
+    botaoAtualizar.addEventListener("click", function () {
+        somarAoSaldo(Number(soma.value));
+    });
+    botaoLimpar.addEventListener("click", function () {
+        limparSaldo();
+    });
+};
 exercise1();
 exercise2();
+exercise3();
